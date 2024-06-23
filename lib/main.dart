@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => HomePage(),
         '/product': (context) => ProductPage(),
         '/productDetails': (context) => ProductPageDetails(
-            productId: ModalRoute.of(context)!.settings.arguments as int),
+            productId: ModalRoute.of(context)!.settings.arguments as String),
       },
       initialRoute: "/",
       title: 'Catalog app',

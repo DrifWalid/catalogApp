@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class ProductPageDetails extends StatefulWidget {
-  final int productId;
+  final String productId;
 
-  ProductPageDetails({Key? key, required int this.productId}) : super(key: key);
+  ProductPageDetails({Key? key, required String this.productId}) : super(key: key);
 
   @override
   State<ProductPageDetails> createState() => _ProductPageDetailsState();
@@ -21,7 +21,7 @@ class _ProductPageDetailsState extends State<ProductPageDetails> {
     super.initState();
     http
         .get(Uri.parse(
-            "http://172.26.48.1:9000/products?id=${widget.productId}"))
+            "http://localhost:9000/products?id=${widget.productId}"))
         .then((res) {
       print(res.body);
       setState(() {
